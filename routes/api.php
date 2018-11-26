@@ -83,3 +83,36 @@ Route::group(['prefix' => 'children'], function () {
     ]);
 
 });
+
+
+
+Route::group(['prefix' => 'bus'], function () {
+
+    # bus index
+    Route::get('/', [
+        'uses' => 'API\BusesController@index',
+        'as' => 'bus',
+    ]);
+
+
+
+    # bus post add
+    Route::post('post-bus', [
+        'uses' => 'API\BusesController@store',
+        'as' => 'post-bus',
+    ]);
+
+
+    # bus post update
+    Route::post('postupdate/{id}', [
+        'uses' => 'API\BusesController@update',
+        'as' => 'post-update-bus',
+    ]);
+
+    # bus delete
+    Route::get('/delete/{id}', [
+        'uses' => 'API\BusesController@destroy',
+        'as' => 'destroy-bus',
+    ]);
+
+});
