@@ -50,3 +50,36 @@ Route::group(['prefix' => 'drivers'], function () {
     ]);
 
 });
+
+
+Route::group(['prefix' => 'children'], function () {
+
+    # children index
+    Route::get('/', [
+        'uses' => 'API\ChildrenController@index',
+        'as' => 'children',
+    ]);
+
+
+
+    # children post add
+    Route::post('post-children', [
+        'uses' => 'API\ChildrenController@store',
+        'as' => 'post-children',
+    ]);
+
+
+    # children post update
+    Route::post('postupdate/{id}', [
+        'uses' => 'API\ChildrenController@update',
+        'as' => 'post-update-children',
+    ]);
+
+    # children delete
+    Route::get('/delete/{id}', [
+        'uses' => 'API\ChildrenController@destroy',
+        'as' => 'destroy-children',
+        'title' => '  ',
+    ]);
+
+});
