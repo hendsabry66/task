@@ -99,16 +99,16 @@ class DriversController extends Controller
         return response()->json($driver, 201);
     }
 
-    public function update(Request $request, Article $article)
+    public function update(Request $request, Driver $driver)
     {
-        $article->update($request->all());
+        $driver->update($request->all());
 
-        return response()->json($article, 200);
+        return response()->json($driver, 200);
     }
 
-    public function delete(Article $article)
+    public function delete(Driver $driver)
     {
-        $article->delete();
+        $driver->delete();
 
         return response()->json(null, 204);
     }
