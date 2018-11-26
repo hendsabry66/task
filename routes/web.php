@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('buses.index');
+    return view('home');
 });
 
 Auth::routes();
