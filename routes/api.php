@@ -29,31 +29,31 @@ Route::group(['prefix' => 'drivers'], function () {
 
     # drivers add
     Route::get('create', [
-        'uses' => "API/DriversController@create",
+        'uses' => "API\DriversController@create",
         'as' => 'add-driver',
     ]);
 
     # drivers post add
     Route::post('post-drivers', [
-        'uses' => 'API/DriversController@store',
+        'uses' => 'API\DriversController@store',
         'as' => 'post-driver',
     ]);
 
     # drivers Edit
     Route::get('/edit/{id}', [
-        'uses' => 'API/DriversController@edit',
+        'uses' => 'API\DriversController@edit',
         'as' => 'get-edit-driver',
     ]);
 
     # drivers post update
     Route::post('postupdate/{id}', [
-        'uses' => 'API/DriversController@update',
+        'uses' => 'API\DriversController@update',
         'as' => 'post-update-driver',
     ]);
 
     # drivers delete
     Route::get('/delete/{id}', [
-        'uses' => 'API/DriversController@destroy',
+        'uses' => 'API\DriversController@destroy',
         'as' => 'destroy-driver',
         'title' => '  ',
     ]);
