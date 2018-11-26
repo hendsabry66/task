@@ -27,11 +27,7 @@ Route::group(['prefix' => 'drivers'], function () {
         'as' => 'drivers',
     ]);
 
-    # drivers add
-    Route::get('create', [
-        'uses' => "API\DriversController@create",
-        'as' => 'add-driver',
-    ]);
+
 
     # drivers post add
     Route::post('post-drivers', [
@@ -39,11 +35,6 @@ Route::group(['prefix' => 'drivers'], function () {
         'as' => 'post-driver',
     ]);
 
-    # drivers Edit
-    Route::get('/edit/{id}', [
-        'uses' => 'API\DriversController@edit',
-        'as' => 'get-edit-driver',
-    ]);
 
     # drivers post update
     Route::post('postupdate/{id}', [
